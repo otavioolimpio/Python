@@ -1,0 +1,35 @@
+#jogo da forca
+
+import random
+
+palavras = ["casamento", "cachorro", "pescoço", "gripe"]
+
+selecionada = random.choice(palavras)
+letras_corretas = ['_'] * len(selecionada)
+letras_erradas = []
+tentativas = 6
+
+print("Welcome to hangman game")
+
+while tentativas > 0:
+   
+    print("Palavra: ", " ".join(letras_corretas))
+    print("Tentativas restantes:", tentativas)
+    letra = input("insira uma letra:").lower()
+    
+    if letra in selecionada:
+        for i in range(len(selecionada)):
+            if selecionada[i] == letra:
+                letras_corretas[i] = letra        
+    else:
+        letras_erradas.append(letra)
+        tentativas -=1
+
+
+    if "_" not in letras_corretas:
+        print("You win, congratulations!")
+        break
+
+    if tentativas == 0:
+        print("You lose the correct word is", selecionada)
+        break
