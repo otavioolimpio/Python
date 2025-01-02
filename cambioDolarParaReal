@@ -4,9 +4,9 @@
 def cambio(moeda, taxa):
     return moeda * taxa
 
-moeda_x = float(input("Enter the amount in dollars"))
-taxa_y = 6.18
+dolar = float(input("Enter the amount in dollars"))
+taxa = 6.18
 
-total = cambio(moeda_x, taxa_y)
+total = cambio(dolar, taxa)
 
 print("The result of the conversion is: R$", total)
