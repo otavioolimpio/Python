@@ -1,0 +1,12 @@
+
+#This program converts the value of the dollar to the Brazilian real
+
+def cambio(moeda, taxa):
+    return moeda * taxa
+
+moeda_x = float(input("Enter the amount in dollars"))
+taxa_y = 6.18
+
+total = cambio(moeda_x, taxa_y)
+
+print("The result of the conversion is: R$", total)
