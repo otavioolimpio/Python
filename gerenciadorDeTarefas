@@ -2,7 +2,7 @@
 #Este programa destina-se a elaboração de um bloco de notas que contem tarefas
 
 #Passo 1 - crie funções para manipular as tarefas (inserir, remover, mostrar, concluir)
- def mostrar_tarefas(tarefas):
+def mostrar_tarefas(tarefas):
      if not tarefas:
          print("\nVocê não tem tarefas pendentes.")
      else:
@@ -10,12 +10,12 @@
          for i, tarefa in enumerate(tarefas, 1):
              print(f"{i}.{tarefa}")
     
- def inserir_tarefa(tarefas):
+def inserir_tarefa(tarefas):
      tarefa = input("Insira a tarefa desejada:")
      tarefas.append(tarefa)
      print(f"Tarefa '{tarefa}' adicionada com sucesso!")
      
- def remover_tarefa(tarefas):
+def remover_tarefa(tarefas):
      mostrar_tarefas(tarefas)
      if tarefas:
          try:
@@ -25,7 +25,7 @@
          except (ValueError, IndexError):
              print("Erro: por favor, digite um númeor válido.")
 
- def conclui_tarefa(tarefas):
+def conclui_tarefa(tarefas):
      mostrar_tarefas(tarefas)
      if tarefas:
          try:
@@ -34,3 +34,33 @@
              print(f"Tarefa '{tarefa_concluida}' marcada como concluída!")
          except (ValueError, IndexError):
              print("Erro: por favor insira um valor válido.")
+
+# Passo 2 - Criando a função principal que vai chamar as funções auxiliares
+def gerenciador_tarefas():
+     tarefas = [] #Lista para armazenar as tarefas
+     while True:
+         print("\nGerenciador de tarefas")
+         print("1. Mostrar Tarefas")
+         print("2. Adicionar tarefas")
+         print("3. Remover tarefas")
+         print("4. Concluir tarefa")
+         print("5. Sair")
+         
+         escolha = input("Escolha uma das opções listadas acima (1 / 2 / 3 / 4 / 5):")
+         
+         if escolha == '1':
+             mostrar_tarefas(tarefas)
+         elif escolha == '2':
+             inserir_tarefa(tarefas)
+         elif escolha == '3':
+             remover_tarefa(tarefas)
+         elif escolha == '4':
+             conclui_tarefa(tarefas)
+         elif escolha == '5':
+             print("Saindo do gerenciador de tarefas!")
+             break
+         else:
+             print("Opção inválida, tente novamente!")
+            
+# Passo 3 - Executando a função principal
+gerenciador_tarefas()
