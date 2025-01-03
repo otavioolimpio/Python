@@ -1,0 +1,36 @@
+
+#Este programa destina-se a elaboração de um bloco de notas que contem tarefas
+
+#Passo 1 - crie funções para manipular as tarefas (inserir, remover, mostrar, concluir)
+ def mostrar_tarefas(tarefas):
+     if not tarefas:
+         print("\nVocê não tem tarefas pendentes.")
+     else:
+         print("\nTarefas Pendentes:")
+         for i, tarefa in enumerate(tarefas, 1):
+             print(f"{i}.{tarefa}")
+    
+ def inserir_tarefa(tarefas):
+     tarefa = input("Insira a tarefa desejada:")
+     tarefas.append(tarefa)
+     print(f"Tarefa '{tarefa}' adicionada com sucesso!")
+     
+ def remover_tarefa(tarefas):
+     mostrar_tarefas(tarefas)
+     if tarefas:
+         try:
+             num_tarefa = int(input("\nInsira o número da tarefa que deseja remover:"))
+             tarefa_removida = tarefas.pop(num_tarefa - 1)
+             print((f"Tarefa '{tarefa_removida}' removida com sucesso!"))
+         except (ValueError, IndexError):
+             print("Erro: por favor, digite um númeor válido.")
+
+ def conclui_tarefa(tarefas):
+     mostrar_tarefas(tarefas)
+     if tarefas:
+         try:
+             num_tarefa = int(input("\nDigite o número da tarefa que foi concluída:"))
+             tarefa_concluida = tarefas.pop(num_tarefa - 1)
+             print(f"Tarefa '{tarefa_concluida}' marcada como concluída!")
+         except (ValueError, IndexError):
+             print("Erro: por favor insira um valor válido.")
