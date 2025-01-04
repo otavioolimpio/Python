@@ -1,0 +1,31 @@
+import random
+
+def gerar_numero():
+    return random.randint(1,100)
+
+def verificar_chute(chute, numero):
+    if chute < numero:
+        return "O número é maior!"
+    elif chute > numero:
+        return "O número é menor!"
+    else: 
+        return "Parabéns, você acertou!"
+
+def main():
+    numero_secreto = gerar_numero()
+    tentativas = 0
+    
+    while True:
+        try:
+            chute = int(input("Digite seu palpite: "))
+            tentativas += 1
+            resultado = verificar_chute(chute, numero_secreto)
+            print(resultado)
+            
+            if chute == numero_secreto:
+                print(f"Você acertou em {tentativas} tentativas!")
+                break
+        except VallueError:
+            print("Por favor, digite um número válido")
+            
+main()
