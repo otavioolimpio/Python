@@ -1,13 +1,13 @@
 import string
-import random
+import secrets
 
-#Este programa destina-se a gerar senhas aleatórias
+#This program criates random passwords 
 
 def gerador_senha(tamanho=12):
     caracteres = string.ascii_letters + string.digits + string.punctuation
     
     #Gera senha aleatória de tamanho 12
-    senha = ''.join(random.choice(caracteres) for _ in range(tamanho))
+    senha = ''.join(secrets.choice(caracteres) for _ in range(tamanho))
     
     return senha
 
