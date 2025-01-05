@@ -10,8 +10,10 @@ def gerador_senha(tamanho=12):
     senha = ''.join(secrets.choice(caracteres) for _ in range(tamanho))
     
     return senha
+try:
+    tamanho = int(input("Insira o tamanho da senha desejada:")) 
+    senha_gerada = gerador_senha(tamanho)
+    print(senha_gerada)
 
-tamanho = int(input("Insira o tamanho da senha desejada:")) 
-senha_gerada = gerador_senha(tamanho)
-
-print(senha_gerada)
+except ValueError:
+    print("Insira um valor válido!")
