@@ -11,7 +11,7 @@ def gerador_senha(tamanho=12):
     
     return senha
 
-tamanho = int(input("\nInsira o tamanho da senha desejada:")) 
+tamanho = int(input("Insira o tamanho da senha desejada:")) 
 senha_gerada = gerador_senha(tamanho)
 
 print(senha_gerada)
