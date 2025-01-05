@@ -1,0 +1,17 @@
+import string
+import random
+
+#Este programa destina-se a gerar senhas aleatórias
+
+def gerador_senha(tamanho=12):
+    caracteres = string.ascii_letters + string.digits + string.punctuation
+    
+    #Gera senha aleatória de tamanho 12
+    senha = ''.join(random.choice(caracteres) for _ in range(tamanho))
+    
+    return senha
+
+tamanho = int(input("\nInsira o tamanho da senha desejada:")) 
+senha_gerada = gerador_senha(tamanho)
+
+print(senha_gerada)
