@@ -16,6 +16,7 @@ def main():
     tentativas = 0
     
     while True:
+        #Tratando as excessões para evitar erro no código
         try:
             chute = int(input("Digite seu palpite: "))
             tentativas += 1
