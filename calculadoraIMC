@@ -1,0 +1,46 @@
+def calcular_imc(peso,altura):
+
+    #Calcular o IMC
+    imc = peso /(altura ** 2)
+    return imc
+
+def classificar_imc(imc):
+
+    #Classificação do IMC de acordo com as faixas recomendadas pela OMS
+    if imc < 18.5:
+        return "Abaixo do peso"
+    elif 18.5 <= imc < 24.9:
+        return "Peso normal"
+    elif 25 <= imc < 29.9:
+        return "Sobrepeso"
+    elif 30 <= imc < 34.9:
+        return "Obesidade grau 1"
+    elif 35 <= imc < 39.9:
+        return "Obesidade grau 2"
+    else:
+        return "Obesidade grau 3"
+
+def main():
+    print ("Calculadora de IMC")
+
+    #Solicitar peso e altura
+    try:
+        peso = float(input("Insira o seu peso em Kg: "))
+        altura = float(input("Insira sua altura em metros: "))
+
+        if peso <= 0 or altura <=0:
+            print("Peso e altura devem ser maior que zero")
+            return
+
+        #Calcular o IMC
+        imc = calcular_imc(peso, altura)
+
+        #Exibe o resultado
+        classificacao = classificar_imc(imc)
+        print(f"Classificação {classificacao}")
+
+    except:
+        print("Por favor insira valores válidos para peso e altura")
+
+if __name__ == "__main__":
+    main()
