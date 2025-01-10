@@ -1,3 +1,5 @@
+#Este programa destina-se a criar um verificador do Índice de Massa Corporal
+
 def calcular_imc(peso,altura):
 
     #Calcular o IMC
