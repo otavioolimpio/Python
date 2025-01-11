@@ -1,0 +1,22 @@
+from textblob import TextBlob
+
+def analisador_sentimento(texto):
+    #Criando um objeto blob
+    blob = TextBlob(texto)
+
+    #Analisando o sentimento
+    sentimento = blob.polarity
+
+    #Interpretador do sentimento
+    if sentimento < 0:
+        return "negativo"
+    elif sentimento > 0:
+        return "positivo"
+    else:
+        return "neutro"
+
+texto = "eu estou extremamente feliz"
+
+resultado = analisador_sentimento(texto)
+
+print(resultado)
