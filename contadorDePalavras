@@ -1,0 +1,22 @@
+def contador_palavras(texto):
+
+    # Removendo os espaços extras
+    texto_limpo = texto.strip()
+
+    # Contando as palavras
+    palavras = texto_limpo.split()
+    num_palavras = len(palavras)
+
+    # Contando os caracteres com os espaços
+    num_caracteres = len(texto_limpo)
+
+    return num_palavras, num_caracteres
+
+# Entrada de texto pelo usuário
+texto = input("Insira o texto desejado:")
+
+palavras, caracteres = contador_palavras(texto)
+
+# Imprimindo o resultado
+print(f"A quantidade de palavras é: {palavras}")
+print(f"A quantidade de caracteres é: {caracteres}")
