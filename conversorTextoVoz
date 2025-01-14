@@ -1,0 +1,11 @@
+import pyttsx3
+
+def conversor_voz(texto):
+  # Inicializa o motor de texto para voz
+  motor = pyttsx3.init()
+
+  motor.say(texto)
+  motor.runAndWait()
+
+texto = input("Insira o texto desejado: ")
+conversor_voz(texto)
