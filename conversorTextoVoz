@@ -19,6 +19,7 @@ def conversor_voz(texto):
   velocidade = motor.getProperty('rate')
   motor.setProperty('rate', 150)
 
+  motor.save_to_file(texto, 'textoEmAudio.mp3')
   motor.say(texto)
   motor.runAndWait()
 
