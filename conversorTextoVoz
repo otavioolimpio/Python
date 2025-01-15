@@ -1,8 +1,23 @@
 import pyttsx3
 
 def conversor_voz(texto):
+
   # Inicializa o motor de texto para voz
   motor = pyttsx3.init()
+
+  motor.setProperty('volume', 1.0)
+
+  # Editando as vozes da fala
+  voices = motor.getProperty('voices')
+  motor.setProperty('voice', voices[0].id)
+
+  # Editando o volume
+  volume = motor.getProperty('volume')
+  motor.setProperty('volume', 1.0)
+
+  # Ajustando a velocidade da fala
+  velocidade = motor.getProperty('rate')
+  motor.setProperty('rate', 150)
 
   motor.say(texto)
   motor.runAndWait()
