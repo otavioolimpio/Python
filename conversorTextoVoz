@@ -2,10 +2,20 @@ import pyttsx3
 
 def conversor_voz(texto):
 
+  def voz_inicial(name):
+    print(f"Inicio da fala: {name}")
+
+  def voz_final(name, completed):
+        if completed:
+            print(f"Fala '{name}' concluída com sucesso!")
+        else:
+            print(f"Fala '{name}' foi interrompida.")
+
   # Inicializa o motor de texto para voz
   motor = pyttsx3.init()
 
-  motor.setProperty('volume', 1.0)
+  motor.connect('started-utterance', voz_inicial)
+  motor.connect('finished-utterance', voz_final)
 
   # Editando as vozes da fala
   voices = motor.getProperty('voices')
@@ -15,12 +25,16 @@ def conversor_voz(texto):
   volume = motor.getProperty('volume')
   motor.setProperty('volume', 1.0)
 
-  # Ajustando a velocidade da fala
+  # Editando a velocidade da fala
   velocidade = motor.getProperty('rate')
   motor.setProperty('rate', 150)
 
-  motor.save_to_file(texto, 'textoEmAudio.mp3')
-  motor.say(texto)
+  # Salvando o texto em um arquivo .MP3
+  arquivo = 'textoEmAudio.mp3'
+  motor.save_to_file(texto, arquivo)
+  motor.say(texto, name="Conversor de texto")
+
+  # Processa as configurações
   motor.runAndWait()
 
 texto = input("Insira o texto desejado: ")
