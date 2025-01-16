@@ -3,6 +3,11 @@ import secrets
 
 #This program criates random passwords 
 
+# Gerador de token Hexadecimal
+def gerador_token(tamanho):
+    token = secrets.token_hex(tamanho)
+    return token
+
 def gerador_senha(tamanho=12):
     caracteres = string.ascii_letters + string.digits + string.punctuation
     
