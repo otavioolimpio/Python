@@ -1,0 +1,56 @@
+
+dicionario = {
+    "Programar" : "escrever códigos",
+    "Editar" : "mexer em algo pronto",
+    "Excluir" : "apagar ou deletar",
+    "Salvar" : "resgatar ou deixar armazenado"
+}
+
+def display_menu():
+    print("********* Dicionário *********")
+    print("| 1 - Adicionar palavra      |")
+    print("| 2 - Procurar palavra       |")
+    print("| 3 - Visualizar dicionário  |")
+    print("| 4 - Sair                   |")
+    print("******************************")
+
+def procurar_palavra():
+    palavra = input("Insira a palavra desejada: ").capitalize()
+    if palavra in dicionario:
+        print(f"{palavra} : {dicionario[palavra]}")
+    else:
+        print(f"A palavra {palavra} não consta no dicionário")
+
+def inserir_palavra():
+    palavra = input("Insira uma palavra ao dicionário:").capitalize()
+    if palavra in dicionario:
+        print(f"A palavra {palavra} já consta no dicionário")
+    else:
+        definicao = input("Insira a definição da palavra:")
+        dicionario[palavra] = definicao
+        print(f"A palavra {palavra} foi adicionada com sucesso")
+
+def imprimir_dicionario():
+    print("Palavras do dicionário")
+    for palavra in sorted(dicionario):
+        print(f"- {palavra} : {dicionario[palavra]}")
+
+def main():
+    while True:
+        display_menu()
+        escolha = input("Insira a opção numérica:")
+        if escolha == "1":
+            inserir_palavra()
+        elif escolha == "2":
+            procurar_palavra()
+        elif escolha == "3":
+            imprimir_dicionario()
+        elif escolha == "4":
+            print("Saindo... Até mais!")
+            break
+        else:
+            print("Opção Inválida, tente novamente!")
+            print()
+
+if __name__ == "__main__":
+    main()
