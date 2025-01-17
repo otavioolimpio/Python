@@ -11,7 +11,8 @@ def display_menu():
     print("| 1 - Adicionar palavra      |")
     print("| 2 - Procurar palavra       |")
     print("| 3 - Visualizar dicionário  |")
-    print("| 4 - Sair                   |")
+    print("| 4 - Excluir palavra        |")
+    print("| 5 - Sair                   |")
     print("******************************")
 
 def procurar_palavra():
@@ -35,6 +36,14 @@ def imprimir_dicionario():
     for palavra in sorted(dicionario):
         print(f"- {palavra} : {dicionario[palavra]}")
 
+def excluir_palavra():
+    palavra = input("Insira a palavra que deseja excluir:").capitalize()
+    if palavra in dicionario:
+        del dicionario[palavra]
+        print(f"A palavra {palavra} foi removida com sucesso")
+    else:
+        print(f"A palavra {palavra} não consta no dicionário")
+
 def main():
     while True:
         display_menu()
@@ -46,6 +55,8 @@ def main():
         elif escolha == "3":
             imprimir_dicionario()
         elif escolha == "4":
+            excluir_palavra()
+        elif escolha == "5":
             print("Saindo... Até mais!")
             break
         else:
