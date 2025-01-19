@@ -1,4 +1,4 @@
-#Este código destina-se a analise de sentimentos
+# Este código destina-se a analise de sentimentos
 from textblob import TextBlob
 
 def analisador_sentimento(texto):
