@@ -5,7 +5,7 @@ def analisador_sentimento(texto):
     #Criando um objeto blob
     blob = TextBlob(texto)
 
-    #Analisando o sentimento
+    # Analisando o sentimento
     sentimento = blob.sentiment.polarity
 
     #Interpretador do sentimento
