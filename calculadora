@@ -1,4 +1,4 @@
-# Calculadora em Python
+# Calculadora em Python.
 
 def soma(a, b):
     return (a + b)
