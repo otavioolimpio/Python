@@ -1,0 +1,15 @@
+import tkinter as tk
+
+def clicando():
+    label.config(text="Olá Mundo")
+
+janela = tk.Tk()
+janela.title("Minha interface")
+
+label = tk.Label(janela, text="Bem vindo")
+label.pack()
+
+botao = tk.Button(janela, text = "Clique aqui", command=clicando)
+botao.pack()
+
+janela.mainloop()
