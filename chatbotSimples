@@ -13,6 +13,7 @@ def chatbot():
     }
     
     while True:
+
         # Receba mensagem do usuário
         mensagem = input("Você: ").lower()
         
