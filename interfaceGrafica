@@ -1,14 +1,11 @@
-import tkinter as tk
-
 def clicando():
-    label.config(text="Olá Mundo")
+    label.config(text="Olá Mundo", font=("Arial", 20))
 
 janela = tk.Tk()
-janela.geometry("400x300")
 janela.title("Minha interface")
-
-label = tk.Label(janela, text="Bem vindo")
-label.pack()
+janela.geometry("400x300")
+label = tk.Label(janela, text="Bem vindo", font=("Arial",20))
+label.pack(pady=10)
 
 botao = tk.Button(janela, text = "Clique aqui", command=clicando)
 botao.pack()
