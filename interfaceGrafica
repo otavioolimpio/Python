@@ -4,6 +4,7 @@ def clicando():
     label.config(text="Olá Mundo")
 
 janela = tk.Tk()
+janela.geometry("400x300")
 janela.title("Minha interface")
 
 label = tk.Label(janela, text="Bem vindo")
