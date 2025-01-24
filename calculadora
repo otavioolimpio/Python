@@ -1,3 +1,4 @@
+import tkinter as ik()
 # Calculadora em Python.
 
 def soma(a, b):
