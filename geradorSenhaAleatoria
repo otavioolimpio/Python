@@ -1,7 +1,7 @@
 import string
 import secrets
 
-#This program criates random passwords 
+# This program criates random passwords 
 
 # Gerador de token Hexadecimal
 def gerador_token(tamanho):
