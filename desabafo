@@ -1,2 +1,17 @@
-print("hello world. I don't have time to study Python")
-print("Estou tentando não desistir de estudar Python")
+import tkinter as tk
+
+# Função para exibir o texto no label
+def mostrar_texto():
+  texto_label.config(text="I don't have time to study Python! Sorry :( ",font=("Arial",20))
+
+# Criando janela principal
+janela = tk.Tk()
+janela.title("Desabafo")
+
+botao = tk.Button(janela, text="Leia meu desabafo", command = mostrar_texto)
+botao.pack()
+
+texto_label = tk.Label(janela, text="")
+texto_label.pack()
+
+janela.mainloop()
