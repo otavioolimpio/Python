@@ -7,7 +7,9 @@ def mostrar_texto():
 # Criando janela principal
 janela = tk.Tk()
 janela.title("Desabafo")
+janela.geometry("600x200")
 
+#Criando o botão para ser clicado
 botao = tk.Button(janela, text="Leia meu desabafo", command = mostrar_texto)
 botao.pack()
 
