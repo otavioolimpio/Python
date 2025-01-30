@@ -17,7 +17,7 @@ janela.geometry("600x200")
 botao = tk.Button(janela, text="Leia meu desabafo", command = mostrar_texto)
 botao.pack()
 
-#Criando o texto para fechar a janela
+# Criando o texto para fechar a janela
 botao_fechar = tk.Button(janela, text="Fechar", command= fechar_janela)
 botao_fechar.pack()
 
