@@ -1,2 +1,2 @@
 # Readme
-Readme description.
+Hi, my name is Otávio, i'm learning Python, Welcome!
