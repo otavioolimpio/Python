@@ -1,0 +1,3 @@
+n = int(input())
+list = [[i+1 for i in range(n)] for j in range(n)]
+print(list)
