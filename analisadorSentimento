@@ -3,7 +3,7 @@ from textblob import TextBlob
 
 def analisador_sentimento(texto):
     # Criando um objeto blob
-    blob = TextBlob(texto) 
+    blob = TextBlob(texto)
 
     # Analisando o sentimento
     sentimento = blob.sentiment.polarity
