@@ -1,4 +1,9 @@
+#List Simple
 list = []
 for i in range(10):
   list.append(i)
+print(list)
+
+#List Comprehension
+list = [i for i in range(10)]
 print(list)
