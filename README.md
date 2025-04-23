@@ -6,7 +6,7 @@
 ***
 - [ ] Variables
 - [ ] Conditionals
-- [ ] Loops
+- [ ] Loops: ` (while , for) `
 - [ ] Lists | Tuples | Sets
 - [ ] Library
 - [ ] Dictionary
