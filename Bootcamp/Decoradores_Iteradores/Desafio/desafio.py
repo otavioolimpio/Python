@@ -1,5 +1,9 @@
 import textwrap
+from datetime import datetime
 
+# Declarando Decorador de Log
+def log_decorator(func):
+    print(f"Operação '{func.__name__}' foi realizada em {datetime.now()}")
 
 def menu():
     menu = """\n
@@ -20,6 +24,7 @@ def depositar(saldo, valor, extrato, /):
         saldo += valor
         extrato += f"Depósito:\tR$ {valor:.2f}\n"
         print("\n=== Depósito realizado com sucesso! ===")
+        
     else:
         print("\n@@@ Operação falhou! O valor informado é inválido. @@@")
 
